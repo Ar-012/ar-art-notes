@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>翻译文章 - Ar的艺术理论笔记</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="translations-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 访问权限检查 -->
+    <script>
+        function checkAccess() {
+            const SESSION_KEY = 'art_notes_access';
+            const SESSION_EXPIRY = 7 * 24 * 60 * 60 * 1000; // 一周
+            
+            const accessData = localStorage.getItem(SESSION_KEY);
+            if (!accessData) {
+                window.location.href = 'password.html';
+                return;
+            }
+            
+            const { timestamp } = JSON.parse(accessData);
+            const now = new Date().getTime();
+            
+            if (now - timestamp >= SESSION_EXPIRY) {
+                localStorage.removeItem(SESSION_KEY);
+                window.location.href = 'password.html';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', checkAccess);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧侧边栏 -->
+        <aside class="sidebar">
+            <!-- 可点击的网站标题 -->
+            <a href="index.html" class="site-title-link">
+                <h1 class="site-title">Ar's Art Theory</h1>
+                <p class="site-subtitle">个人学习资料库</p>
+            </a>
+            
+            <nav class="sidebar-nav">
+                <!-- 翻译资料 -->
+                <div class="nav-section">
+                    <h3>翻译资料</h3>
+                    <ul>
+                        <li><a href="translations.html" class="active"><i class="fas fa-file-alt"></i> 翻译文章</a></li>
+                        <li><a href="author-neil-blevins.html"><i class="fas fa-user"></i> Neil Blevins系列</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 其他 -->
+                <div class="nav-section">
+                    <h3>其他</h3>
+                    <ul>
+                        <li><a href="other-articles.html"><i class="fas fa-book"></i> 其他文章</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="about.html" class="about-link"><i class="fas fa-info-circle"></i> 关于本站</a>
+                
+                <!-- 个人使用声明 -->
+                <div class="personal-use-notice">
+                    <p>本网站为个人学习使用，内容仅供个人参考。</p>
+                </div>
+                
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span class="contact-email">contact@example.com</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 顶部更新信息栏 -->
+            <div class="update-bar">
+                <div class="update-info">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>最近更新: <strong id="last-update-date">2023-11-20</strong></span>
+                </div>
+            </div>
+            
+            <!-- 翻译文章内容区域 -->
+            <section class="content-section translations-page">
+                <!-- 页面标题和描述 -->
+                <div class="page-header">
+                    <h1><i class="fas fa-language"></i> 翻译文章</h1>
+                    <p class="page-description">收录零散的艺术理论与技术文章翻译</p>
+                </div>
+                
+                <!-- 文章列表 -->
+                <div class="translations-list">
+                    <div class="translation-item">
+                        <div class="translation-header">
+                            <h2><a href="translations/visual-storytelling.html" class="translation-link">视觉叙事的基本原则</a></h2>
+                            <span class="translation-date">2023-11-15</span>
+                        </div>
+                        <div class="translation-meta">
+                            <span class="original-title" title="Principles of Visual Storytelling">原文: Principles of Visual Storymaking</span>
+                            <span class="category-tag">视觉传达</span>
+                        </div>
+                        <p class="translation-excerpt">探讨如何通过图像序列构建有说服力的视觉叙事，包括镜头选择、构图技巧和节奏控制。</p>
+                    </div>
+                    
+                    <div class="translation-item">
+                        <div class="translation-header">
+                            <h2><a href="translations/color-psychology.html" class="translation-link">色彩心理学在概念设计中的应用</a></h2>
+                            <span class="translation-date">2023-11-10</span>
+                        </div>
+                        <div class="translation-meta">
+                            <span class="original-title" title="Color Psychology in Concept Design">原文: Color Psychology in Concept Design</span>
+                            <span class="category-tag">色彩理论</span>
+                        </div>
+                        <p class="translation-excerpt">分析不同色彩如何影响观众情绪，以及在游戏和电影概念设计中如何有效运用色彩传达信息。</p>
+                    </div>
+                    
+                    <div class="translation-item">
+                        <div class="translation-header">
+                            <h2><a href="translations/digital-painting-workflow.html" class="translation-link">数字绘画工作流程优化</a></h2>
+                            <span class="translation-date">2023-11-05</span>
+                        </div>
+                        <div class="translation-meta">
+                            <span class="original-title" title="Digital Painting Workflow Optimization">原文: Digital Painting Workflow Optimization</span>
+                            <span class="category-tag">CG技法</span>
+                        </div>
+                        <p class="translation-excerpt">分享Photoshop和Clip Studio Paint中的高效绘画工作流程，包括图层管理和笔刷设置技巧。</p>
+                    </div>
+                    
+                    <div class="translation-item">
+                        <div class="translation-header">
+                            <h2><a href="translations/character-design-silhouette.html" class="translation-link">角色剪影设计与识别度</a></h2>
+                            <span class="translation-date">2023-10-28</span>
+                        </div>
+                        <div class="translation-meta">
+                            <span class="original-title" title="Character Silhouette Design and Recognition">原文: Character Silhouette Design and Recognition</span>
+                            <span class="category-tag">角色设计</span>
+                        </div>
+                        <p class="translation-excerpt">探讨如何通过强力的剪影设计使角色在复杂场景中依然保持高识别度，包括形状语言和比例控制。</p>
+                    </div>
+                    
+                    <div class="translation-item">
+                        <div class="translation-header">
+                            <h2><a href="translations/environment-storytelling.html" class="translation-link">环境设计中的叙事技巧</a></h2>
+                            <span class="translation-date">2023-10-20</span>
+                        </div>
+                        <div class="translation-meta">
+                            <span class="original-title" title="Narrative Techniques in Environment Design">原文: Narrative Techniques in Environment Design</span>
+                            <span class="category-tag">场景设计</span>
+                        </div>
+                        <p class="translation-excerpt">如何通过环境细节、光影布局和空间结构讲述故事，增强游戏和电影的世界观沉浸感。</p>
+                    </div>
+                </div>
+                
+                <!-- 页面说明 -->
+                <div class="page-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p>本页面收录零散的艺术相关文章翻译，点击标题可查看文章详细内容。</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>Ar的艺术理论笔记 - 个人学习资料整理</p>
+                <p>联系: <span class="contact-email">contact@example.com</span></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 更新最近更新日期
+        function updateLastDate() {
+            const today = new Date();
+            const formattedDate = today.toISOString().split('T')[0];
+            document.getElementById('last-update-date').textContent = formattedDate;
+        }
+        
+        // 页面加载时更新日期
+        document.addEventListener('DOMContentLoaded', updateLastDate);
+        
+        // 侧边栏导航高亮
+        const navLinks = document.querySelectorAll('.sidebar-nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if(this.getAttribute('href') !== '#') {
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

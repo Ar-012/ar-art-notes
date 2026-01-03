@@ -1,0 +1,222 @@
+/* ============================================
+   翻译文章页面专用样式
+   ============================================ */
+
+/* 翻译文章页面样式 */
+.translations-page {
+    padding: 2rem;
+}
+
+/* 页面标题区域 */
+.page-header {
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    color: #2d3748;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.page-header h1 i {
+    color: #3182ce;
+}
+
+.page-description {
+    font-size: 1.1rem;
+    color: #718096;
+    line-height: 1.6;
+}
+
+/* 文章列表样式 */
+.translations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.translation-item {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.translation-item:hover {
+    background-color: #edf2f7;
+    border-color: #cbd5e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 文章头部 */
+.translation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.translation-header h2 {
+    font-size: 1.3rem;
+    color: #2d3748;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.translation-link {
+    color: #2d3748;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.translation-link:hover {
+    color: #3182ce;
+}
+
+.translation-date {
+    font-size: 0.9rem;
+    color: #718096;
+    background-color: #edf2f7;
+    padding: 0.3rem 0.7rem;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+/* 文章元信息 */
+.translation-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.original-title {
+    font-size: 0.9rem;
+    color: #718096;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: italic;
+    background-color: #f1f5f9;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    cursor: help;
+    position: relative;
+}
+
+.original-title:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background-color: #2d3748;
+    color: #e2e8f0;
+    padding: 0.4rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 3px;
+}
+
+.category-tag {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    background-color: #e2e8f0;
+    color: #4a5568;
+}
+
+/* 文章摘要 */
+.translation-excerpt {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* 页面说明 */
+.page-note {
+    margin-top: 3rem;
+    padding: 1.2rem 1.5rem;
+    background-color: #f0fff4;
+    border-left: 4px solid #38a169;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+    color: #2f855a;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.page-note i {
+    color: #38a169;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.page-note p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .translations-page {
+        padding: 1.5rem;
+    }
+    
+    .translation-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .translation-date {
+        align-self: flex-start;
+    }
+    
+    .translation-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .page-header h1 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .translations-page {
+        padding: 1rem;
+    }
+    
+    .translation-item {
+        padding: 1.2rem;
+    }
+    
+    .translation-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .page-description {
+        font-size: 1rem;
+    }
+}

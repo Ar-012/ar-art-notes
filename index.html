@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ar的艺术理论笔记</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 访问权限检查 -->
+    <script>
+        function checkAccess() {
+            const SESSION_KEY = 'art_notes_access';
+            const SESSION_EXPIRY = 7 * 24 * 60 * 60 * 1000; // 一周
+            
+            const accessData = localStorage.getItem(SESSION_KEY);
+            if (!accessData) {
+                window.location.href = 'password.html';
+                return;
+            }
+            
+            const { timestamp } = JSON.parse(accessData);
+            const now = new Date().getTime();
+            
+            if (now - timestamp >= SESSION_EXPIRY) {
+                localStorage.removeItem(SESSION_KEY);
+                window.location.href = 'password.html';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', checkAccess);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧侧边栏 -->
+        <aside class="sidebar">
+            <!-- 可点击的网站标题 -->
+            <a href="index.html" class="site-title-link">
+                <h1 class="site-title">Ar's Art Theory</h1>
+                <p class="site-subtitle">个人学习资料库</p>
+            </a>
+            
+            <nav class="sidebar-nav">
+                <!-- 翻译资料 -->
+                <div class="nav-section">
+                    <h3>翻译资料</h3>
+                    <ul>
+                        <li><a href="translations.html"><i class="fas fa-file-alt"></i> 翻译文章</a></li>
+                        <li><a href="author-neil-blevins.html"><i class="fas fa-user"></i> Neil Blevins系列</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 其他 -->
+                <div class="nav-section">
+                    <h3>其他</h3>
+                    <ul>
+                        <li><a href="other-articles.html"><i class="fas fa-book"></i> 其他文章</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="about.html" class="about-link"><i class="fas fa-info-circle"></i> 关于本站</a>
+                
+                <!-- 个人使用声明 -->
+                <div class="personal-use-notice">
+                    <p>本网站为个人学习使用，内容仅供个人参考。</p>
+                </div>
+                
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span class="contact-email">contact@example.com</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content dark-theme">
+            <!-- 顶部更新信息栏 -->
+            <div class="update-bar">
+                <div class="update-info">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>最近更新: <strong id="last-update-date">2023-11-20</strong></span>
+                </div>
+            </div>
+            
+            <!-- 简洁的名言区域 -->
+            <section class="content-section quotes-only">
+                <div class="minimal-container">
+                    <!-- 主要名言 -->
+                    <div class="main-quote">
+                        <div class="quote-decoration">
+                            <div class="decoration-line"></div>
+                            <i class="fas fa-asterisk"></i>
+                            <div class="decoration-line"></div>
+                        </div>
+                        <h1 class="quote-text">实事求是</h1>
+                        <p class="quote-source">- 实践真理</p>
+                    </div>
+                    
+                    <!-- 次要名言 -->
+                    <div class="secondary-quote">
+                        <p class="quote-text">工作虽多，可以安排一下，一段时间内只处理主要问题，这样也就不会太忙了。</p>
+                        <p class="quote-source">- 时间管理智慧</p>
+                    </div>
+                    
+                    <!-- 页面说明 -->
+                    <div class="page-note">
+                        <i class="fas fa-moon"></i>
+                        <p>专注 · 思考 · 沉淀</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>Ar的艺术理论笔记 - 个人学习资料整理</p>
+                <p>联系: <span class="contact-email">contact@example.com</span></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 更新最近更新日期
+        function updateLastDate() {
+            const today = new Date();
+            const formattedDate = today.toISOString().split('T')[0];
+            document.getElementById('last-update-date').textContent = formattedDate;
+        }
+        
+        // 页面加载时更新日期
+        document.addEventListener('DOMContentLoaded', updateLastDate);
+        
+        // 侧边栏导航高亮
+        const navLinks = document.querySelectorAll('.sidebar-nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if(this.getAttribute('href') !== '#') {
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

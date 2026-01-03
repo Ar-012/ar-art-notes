@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neil Blevins 系列 - Ar的艺术理论笔记</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="author-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 访问权限检查 -->
+    <script>
+        function checkAccess() {
+            const SESSION_KEY = 'art_notes_access';
+            const SESSION_EXPIRY = 7 * 24 * 60 * 60 * 1000; // 一周
+            
+            const accessData = localStorage.getItem(SESSION_KEY);
+            if (!accessData) {
+                window.location.href = 'password.html';
+                return;
+            }
+            
+            const { timestamp } = JSON.parse(accessData);
+            const now = new Date().getTime();
+            
+            if (now - timestamp >= SESSION_EXPIRY) {
+                localStorage.removeItem(SESSION_KEY);
+                window.location.href = 'password.html';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', checkAccess);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧侧边栏 -->
+        <aside class="sidebar">
+            <!-- 可点击的网站标题 -->
+            <a href="index.html" class="site-title-link">
+                <h1 class="site-title">Ar's Art Theory</h1>
+                <p class="site-subtitle">个人学习资料库</p>
+            </a>
+            
+            <nav class="sidebar-nav">
+                <!-- 翻译资料 -->
+                <div class="nav-section">
+                    <h3>翻译资料</h3>
+                    <ul>
+                        <li><a href="translations.html"><i class="fas fa-file-alt"></i> 翻译文章</a></li>
+                        <li><a href="author-neil-blevins.html" class="active"><i class="fas fa-user"></i> Neil Blevins系列</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 其他 -->
+                <div class="nav-section">
+                    <h3>其他</h3>
+                    <ul>
+                        <li><a href="other-articles.html"><i class="fas fa-book"></i> 其他文章</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="about.html" class="about-link"><i class="fas fa-info-circle"></i> 关于本站</a>
+                
+                <!-- 个人使用声明 -->
+                <div class="personal-use-notice">
+                    <p>本网站为个人学习使用，内容仅供个人参考。</p>
+                </div>
+                
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span class="contact-email">contact@example.com</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <section class="content-section author-page">
+                <div class="author-header">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h1>Neil Blevins 系列</h1>
+                        <p class="author-description" title="Professional concept artist and technical director">专业概念艺术家与技术总监</p>
+                    </div>
+                </div>
+                
+                <!-- 系列概述 -->
+                <div class="series-overview">
+                    <p>本页面整理了 Neil Blevins 在其个人网站"艺术课程"栏目中发布的专业文章。</p>
+                </div>
+                
+                <!-- 星标高亮文章提示 -->
+                <div class="starred-articles-note">
+                    <i class="fas fa-star"></i>
+                    <p>带 <i class="fas fa-star starred-icon-small"></i> 标记的文章为重点推荐内容</p>
+                </div>
+                
+                <!-- 第一部分：艺术创造流程 -->
+                <div class="category-block">
+                    <h2><i class="fas fa-sitemap"></i> 第一部分：艺术创造流程 <span class="en-title" title="Art Making Process">(Art Making Process)</span></h2>
+                    
+                    <!-- 艺术概览 -->
+                    <div class="subcategory">
+                        <h3 title="Art Overview">艺术概览 <span class="en-title">(Art Overview)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/art_process_overview_2025.html" title="Art Process Overview 2025">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">艺术流程概览 2025</div>
+                                        <div class="article-title-english" title="Art Process Overview 2025">Art Process Overview 2025</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="starred-article"><i class="fas fa-star"></i> 重点</span>
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/digital_collage.html" title="The Digital Collage">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">数字拼贴</div>
+                                        <div class="article-title-english" title="The Digital Collage">The Digital Collage</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/thumbnails_and_sketches.html" title="Thumbnails And Sketches">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">缩略图与草图</div>
+                                        <div class="article-title-english" title="Thumbnails And Sketches">Thumbnails And Sketches</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/art_bible.html" title="Creating An Art Bible For A Fictional Universe">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">为虚构宇宙创建艺术圣经</div>
+                                        <div class="article-title-english" title="Creating An Art Bible For A Fictional Universe">Creating An Art Bible For A Fictional Universe</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 1) 创意与支柱 -->
+                    <div class="subcategory">
+                        <h3 title="1) Ideas & Pillars">1) 创意与支柱 <span class="en-title">(Ideas & Pillars)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/pillars.html" title="Visual Design Pillars">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">视觉设计支柱</div>
+                                        <div class="article-title-english" title="Visual Design Pillars">Visual Design Pillars</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="starred-article"><i class="fas fa-star"></i> 重点</span>
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/fighting_mech_analysis.html" title="Visual Hooks: Fighting Mech Analysis">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">视觉钩子：战斗机甲分析</div>
+                                        <div class="article-title-english" title="Visual Hooks: Fighting Mech Analysis">Visual Hooks: Fighting Mech Analysis</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/tool_dicates_the_design.html" title="Warning: The Tool May Try And Dictate The Design">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">警告：工具可能试图支配设计</div>
+                                        <div class="article-title-english" title="Warning: The Tool May Try And Dictate The Design">Warning: The Tool May Try And Dictate The Design</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 2) 研究与参考 -->
+                    <div class="subcategory">
+                        <h3 title="2) Research & Reference">2) 研究与参考 <span class="en-title">(Research & Reference)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/robot_joints.html" title="Designing Robotic Joints For Concept Artists">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">为概念艺术家设计机器人关节</div>
+                                        <div class="article-title-english" title="Designing Robotic Joints For Concept Artists">Designing Robotic Joints For Concept Artists</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/weathering_types.html" title="Different Types Of Weathering">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">不同类型的风化效果</div>
+                                        <div class="article-title-english" title="Different Types Of Weathering">Different Types Of Weathering</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/artistic_style_influences.html" title="Examining The Artistic Style Of Your Influences">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">审视你所受影响的艺术风格</div>
+                                        <div class="article-title-english" title="Examining The Artistic Style Of Your Influences">Examining The Artistic Style Of Your Influences</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/faces_objects.html" title="Faces From Everyday Objects: Designing Robots">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">从日常物品中寻找面孔：设计机器人</div>
+                                        <div class="article-title-english" title="Faces From Everyday Objects: Designing Robots">Faces From Everyday Objects: Designing Robots</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/architecture_at_dusk.html" title="Photographing Your Own Reference: Architecture At Dusk">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">拍摄你自己的参考图：黄昏时的建筑</div>
+                                        <div class="article-title-english" title="Photographing Your Own Reference: Architecture At Dusk">Photographing Your Own Reference: Architecture At Dusk</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 3) 文本与关键词 -->
+                    <div class="subcategory">
+                        <h3 title="3) Text & Keywords">3) 文本与关键词 <span class="en-title">(Text & Keywords)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/keywords_visual_design.html" title="Using Keywords To Define A Visual Design">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">使用关键词定义视觉设计</div>
+                                        <div class="article-title-english" title="Using Keywords To Define A Visual Design">Using Keywords To Define A Visual Design</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 4) 类型与符号 -->
+                    <div class="subcategory">
+                        <h3 title="4) Type & Symbols">4) 类型与符号 <span class="en-title">(Type & Symbols)</span></h3>
+                        <div class="no-articles-message">
+                            <p><i class="fas fa-info-circle"></i> 此分类暂无文章</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 5) 着色器 -->
+                    <div class="subcategory">
+                        <h3 title="5) Shaders">5) 着色器 <span class="en-title">(Shaders)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/material_polished_metal.html" title="Polished Metal Material">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">抛光金属材质</div>
+                                        <div class="article-title-english" title="Polished Metal Material">Polished Metal Material</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/material_distressed_metal.html" title="Distressed Metal Material">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">做旧金属材质</div>
+                                        <div class="article-title-english" title="Distressed Metal Material">Distressed Metal Material</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/material_brushed_metal.html" title="Brushed Metal Material">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">拉丝金属材质</div>
+                                        <div class="article-title-english" title="Brushed Metal Material">Brushed Metal Material</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/material_chipped_paint.html" title="Chipped Paint Material">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">剥落油漆材质</div>
+                                        <div class="article-title-english" title="Chipped Paint Material">Chipped Paint Material</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/material_dust.html" title="Dust Material">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">灰尘材质</div>
+                                        <div class="article-title-english" title="Dust Material">Dust Material</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/material_glass.html" title="Glass Material">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">玻璃材质</div>
+                                        <div class="article-title-english" title="Glass Material">Glass Material</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/material_glazed_pottery.html" title="Glazed Pottery Material">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">釉面陶器材质</div>
+                                        <div class="article-title-english" title="Glazed Pottery Material">Glazed Pottery Material</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- 更多着色器文章可以继续添加... -->
+                        </ul>
+                    </div>
+                    
+                    <!-- 6) 色彩设计 -->
+                    <div class="subcategory">
+                        <h3 title="6) Color Design">6) 色彩设计 <span class="en-title">(Color Design)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/color_additive_subtractive.html" title="The Difference Between Additive And Subtractive Color Systems">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">加色系统与减色系统的区别</div>
+                                        <div class="article-title-english" title="The Difference Between Additive And Subtractive Color Systems">The Difference Between Additive And Subtractive Color Systems</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/color_human_perception.html" title="5 Tips About The Way Humans Perceive Color">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">关于人类感知颜色的5个技巧</div>
+                                        <div class="article-title-english" title="5 Tips About The Way Humans Perceive Color">5 Tips About The Way Humans Perceive Color</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/greens.html" title="A Study In Greens, Variety in Your Colors">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">绿色研究：色彩多样性</div>
+                                        <div class="article-title-english" title="A Study In Greens, Variety in Your Colors">A Study In Greens, Variety in Your Colors</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/color_emotion_culture.html" title="Color As It Relates To Culture And Emotion">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">色彩与文化、情感的关系</div>
+                                        <div class="article-title-english" title="Color As It Relates To Culture And Emotion">Color As It Relates To Culture And Emotion</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/color_accidental.html" title="Using Accidental Colors In 2D and 3D">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">在2D和3D中使用偶然色彩</div>
+                                        <div class="article-title-english" title="Using Accidental Colors In 2D and 3D">Using Accidental Colors In 2D and 3D</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 7) 形状与图案 -->
+                    <div class="subcategory">
+                        <h3 title="7) Shapes & Patterns">7) 形状与图案 <span class="en-title">(Shapes & Patterns)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/historical_design_styles.html" title="Knowing Your Historical Design Styles">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">了解你的历史设计风格</div>
+                                        <div class="article-title-english" title="Knowing Your Historical Design Styles">Knowing Your Historical Design Styles</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/shapes_patterns_fictional_species.html" title="Using Shapes & Patterns To Define A Fictional Species">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">使用形状与图案定义虚构物种</div>
+                                        <div class="article-title-english" title="Using Shapes & Patterns To Define A Fictional Species">Using Shapes & Patterns To Define A Fictional Species</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 8) 细节与测试场景 + 9) 构图 -->
+                    <div class="subcategory">
+                        <h3 title="9) Composition">9) 构图 <span class="en-title">(Composition)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/composition_areas_of_visual_rest.html" title="Areas Of Visual Detail, Areas Of Visual Rest">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">视觉细节区域与视觉休憩区域</div>
+                                        <div class="article-title-english" title="Areas Of Visual Detail, Areas Of Visual Rest">Areas Of Visual Detail, Areas Of Visual Rest</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/composition_clumping.html" title="Clumping and Grouping">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">聚集与分组</div>
+                                        <div class="article-title-english" title="Clumping and Grouping">Clumping and Grouping</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/compositional_weight.html" title="Compositional Weight">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">构图权重</div>
+                                        <div class="article-title-english" title="Compositional Weight">Compositional Weight</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/composition_types.html" title="Composition Types">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">构图类型</div>
+                                        <div class="article-title-english" title="Composition Types">Composition Types</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/composition_contrasts.html" title="Contrasts In Composition">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">构图中的对比</div>
+                                        <div class="article-title-english" title="Contrasts In Composition">Contrasts In Composition</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- 更多构图文章可以继续添加... -->
+                        </ul>
+                    </div>
+                    
+                    <!-- 这里可以继续添加其他子分类... -->
+                    
+                </div>
+                
+                <!-- 第二部分：艺术家生涯 -->
+                <div class="category-block">
+                    <h2><i class="fas fa-user-tie"></i> 第二部分：艺术家生涯 <span class="en-title" title="Life As An Artist">(Life As An Artist)</span></h2>
+                    
+                    <!-- 艺术指导 -->
+                    <div class="subcategory">
+                        <h3 title="Art Direction">艺术指导 <span class="en-title">(Art Direction)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/concept_idea_not_finish.html" title="Concept Design Is About The Idea, Not The Level Of Finish">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">概念设计是关于想法，而非完成度</div>
+                                        <div class="article-title-english" title="Concept Design Is About The Idea, Not The Level Of Finish">Concept Design Is About The Idea, Not The Level Of Finish</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="translations/blevins/mood_board_design_packet_callout_sheet.html" title="Mood Boards, Design Packets and Callout Sheets">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">情绪板、设计包和标注表</div>
+                                        <div class="article-title-english" title="Mood Boards, Design Packets and Callout Sheets">Mood Boards, Design Packets and Callout Sheets</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- 更多艺术指导文章可以继续添加... -->
+                        </ul>
+                    </div>
+                    
+                    <!-- 艺术作为职业 -->
+                    <div class="subcategory">
+                        <h3 title="Art As A Career">艺术作为职业 <span class="en-title">(Art As A Career)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/concept_design_for_games_vs_film.html" title="Concept Design For Games Vs Films">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">游戏与电影的概念设计对比</div>
+                                        <div class="article-title-english" title="Concept Design For Games Vs Films">Concept Design For Games Vs Films</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- 更多职业文章可以继续添加... -->
+                        </ul>
+                    </div>
+                    
+                    <!-- 制作书籍 -->
+                    <div class="subcategory">
+                        <h3 title="Making Books">制作书籍 <span class="en-title">(Making Books)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/art_book.html" title="Creating, Financing and Publishing Your Own Artbook">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">创建、筹资和出版你自己的艺术书</div>
+                                        <div class="article-title-english" title="Creating, Financing and Publishing Your Own Artbook">Creating, Financing and Publishing Your Own Artbook</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 艺术相关软件 -->
+                    <div class="subcategory">
+                        <h3 title="Art Related Software">艺术相关软件 <span class="en-title">(Art Related Software)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/software_pipeline.html" title="Choosing Software For Your Own Personal Art Pipeline">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">为个人艺术流程选择软件</div>
+                                        <div class="article-title-english" title="Choosing Software For Your Own Personal Art Pipeline">Choosing Software For Your Own Personal Art Pipeline</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- 更多软件文章可以继续添加... -->
+                        </ul>
+                    </div>
+                    
+                    <!-- 艺术哲学 -->
+                    <div class="subcategory">
+                        <h3 title="Art Philosophy">艺术哲学 <span class="en-title">(Art Philosophy)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/authenticity_in_art.html" title="Authenticity In Art">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">艺术中的真实性</div>
+                                        <div class="article-title-english" title="Authenticity In Art">Authenticity In Art</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- 更多哲学文章可以继续添加... -->
+                        </ul>
+                    </div>
+                    
+                    <!-- 艺术学习与学校 -->
+                    <div class="subcategory">
+                        <h3 title="Art Learning & School">艺术学习与学校 <span class="en-title">(Art Learning & School)</span></h3>
+                        <ul class="article-list">
+                            <li>
+                                <a href="translations/blevins/art_learning_books.html" title="Favorite Books For Learning The Art Making Process">
+                                    <div class="article-title-container">
+                                        <div class="article-title-chinese">学习艺术创作过程的推荐书籍</div>
+                                        <div class="article-title-english" title="Favorite Books For Learning The Art Making Process">Favorite Books For Learning The Art Making Process</div>
+                                    </div>
+                                    <div class="article-status-row">
+                                        <span class="article-link-indicator" title="点击查看原文"><i class="fas fa-external-link-alt"></i> 原文</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="page-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p>点击文章标题可查看原文内容。带 <i class="fas fa-star starred-icon-small"></i> 标记的文章为重点推荐内容。</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>Ar的艺术理论笔记 - 个人学习资料整理</p>
+                <p>联系: <span class="contact-email">contact@example.com</span></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 侧边栏导航高亮
+        const navLinks = document.querySelectorAll('.sidebar-nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if(this.getAttribute('href') !== '#') {
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
