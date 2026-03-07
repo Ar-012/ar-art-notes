@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>概念设计画师 | Ar的艺术理论笔记</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="artists.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="artists-page">
+    <div class="container">
+        <aside class="sidebar">
+            <a href="index.html" class="site-title-link">
+                <h1 class="site-title">Ar's Art Theory</h1>
+                <p class="site-subtitle">个人学习资料库</p>
+            </a>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>翻译资料</h3>
+                    <ul>
+                        <li><a href="translations.html"><i class="fas fa-file-alt"></i> 翻译文章</a></li>
+                        <li><a href="author-neil-blevins.html"><i class="fas fa-user"></i> Neil Blevins系列</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>画师合集</h3>
+                    <ul>
+                        <li><a href="artists-concept.html" class="active"><i class="fas fa-drafting-compass"></i> 概念设计</a></li>
+                        <li><a href="artists-illustration.html"><i class="fas fa-paint-brush"></i> 插画艺术</a></li>
+                        <li><a href="artists-anime.html"><i class="fas fa-gamepad"></i> 二次元/动漫</a></li>
+                        <li><a href="artists-game.html"><i class="fas fa-vr-cardboard"></i> 游戏美术</a></li>
+                        <li><a href="artists-3d.html"><i class="fas fa-cube"></i> 3D艺术</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>其他</h3>
+                    <ul>
+                        <li><a href="other-articles.html"><i class="fas fa-book"></i> 其他文章</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="about.html" class="about-link"><i class="fas fa-info-circle"></i> 关于本站</a>
+                <div class="personal-use-notice">
+                    <p>本网站为个人学习使用，内容仅供个人参考。</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span class="contact-email">contact@example.com</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content artists-category">
+            <div class="update-bar">
+                <div class="update-info">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>最近更新: <strong id="last-update-date">2023-11-20</strong></span>
+                </div>
+            </div>
+            
+            <section class="content-section">
+                <h2><i class="fas fa-drafting-compass"></i> 概念设计画师</h2>
+                <p class="section-intro">收录专注于概念设计的艺术家，包括场景设计、角色设计、机械设计等方向。</p>
+                
+                <div class="artists-grid">
+                    <!-- John Park - 重点标记 -->
+                    <a href="artists/concept/john-park.html" class="artist-card">
+                        <div class="artist-featured">
+                            <i class="fas fa-star"></i> 重点
+                        </div>
+                        <div class="artist-thumbnail">
+                            <img src="images/artists/concept/john-park-thumb.jpg" alt="John Park作品">
+                        </div>
+                        <div class="artist-info">
+                            <div class="artist-name">John Park</div>
+                            <div class="artist-specialty">科幻场景 · 机械设计</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Feng Zhu -->
+                    <a href="artists/concept/feng-zhu.html" class="artist-card">
+                        <div class="artist-thumbnail">
+                            <img src="images/artists/concept/feng-zhu-thumb.jpg" alt="Feng Zhu作品">
+                        </div>
+                        <div class="artist-info">
+                            <div class="artist-name">Feng Zhu</div>
+                            <div class="artist-specialty">场景概念 · 建筑设计</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Maciej Kuciara -->
+                    <a href="artists/concept/maciej-kuciara.html" class="artist-card">
+                        <div class="artist-thumbnail">
+                            <img src="images/artists/concept/maciej-kuciara-thumb.jpg" alt="Maciej Kuciara作品">
+                        </div>
+                        <div class="artist-info">
+                            <div class="artist-name">Maciej Kuciara</div>
+                            <div class="artist-specialty">电影概念 · 角色设计</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Jama Jurabaev - 重点标记 -->
+                    <a href="artists/concept/jama-jurabaev.html" class="artist-card">
+                        <div class="artist-featured">
+                            <i class="fas fa-star"></i> 重点
+                        </div>
+                        <div class="artist-thumbnail">
+                            <img src="images/artists/concept/jama-jurabaev-thumb.jpg" alt="Jama Jurabaev作品">
+                        </div>
+                        <div class="artist-info">
+                            <div class="artist-name">Jama Jurabaev</div>
+                            <div class="artist-specialty">3D概念 · 数字绘景</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Raphael Lacoste -->
+                    <a href="artists/concept/raphael-lacoste.html" class="artist-card">
+                        <div class="artist-thumbnail">
+                            <img src="images/artists/concept/raphael-lacoste-thumb.jpg" alt="Raphael Lacoste作品">
+                        </div>
+                        <div class="artist-info">
+                            <div class="artist-name">Raphael Lacoste</div>
+                            <div class="artist-specialty">史诗场景 · 历史题材</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Simon Stålenhag -->
+                    <a href="artists/concept/simon-stalenhag.html" class="artist-card">
+                        <div class="artist-thumbnail">
+                            <img src="images/artists/concept/simon-stalenhag-thumb.jpg" alt="Simon Stålenhag作品">
+                        </div>
+                        <div class="artist-info">
+                            <div class="artist-name">Simon Stålenhag</div>
+                            <div class="artist-specialty">科幻怀旧 · 叙事场景</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>Ar的艺术理论笔记 - 个人学习资料整理</p>
+                <p>联系: <span class="contact-email">contact@example.com</span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Park | Ar的艺术理论笔记</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="artists.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 图片占位样式 */
+        .placeholder-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(45deg, #e2e8f0 25%, #cbd5e0 25%, #cbd5e0 50%, #e2e8f0 50%, #e2e8f0 75%, #cbd5e0 75%, #cbd5e0);
+            background-size: 40px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #718096;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* 不同高度的占位图，模拟瀑布流 */
+        .image-h200 { height: 200px; }
+        .image-h250 { height: 250px; }
+        .image-h300 { height: 300px; }
+        .image-h350 { height: 350px; }
+        .image-h400 { height: 400px; }
+        .image-h280 { height: 280px; }
+        .image-h320 { height: 320px; }
+        .image-h380 { height: 380px; }
+        .image-h220 { height: 220px; }
+    </style>
+</head>
+<body class="artists-page artist-single-page">
+    <div class="container">
+        <aside class="sidebar">
+            <a href="index.html" class="site-title-link">
+                <h1 class="site-title">Ar's Art Theory</h1>
+                <p class="site-subtitle">个人学习资料库</p>
+            </a>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>翻译资料</h3>
+                    <ul>
+                        <li><a href="translations.html"><i class="fas fa-file-alt"></i> 翻译文章</a></li>
+                        <li><a href="author-neil-blevins.html"><i class="fas fa-user"></i> Neil Blevins系列</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>画师合集</h3>
+                    <ul>
+                        <li><a href="artists-concept.html" class="active"><i class="fas fa-drafting-compass"></i> 概念设计</a></li>
+                        <li><a href="artists-illustration.html"><i class="fas fa-paint-brush"></i> 插画艺术</a></li>
+                        <li><a href="artists-anime.html"><i class="fas fa-gamepad"></i> 二次元/动漫</a></li>
+                        <li><a href="artists-game.html"><i class="fas fa-vr-cardboard"></i> 游戏美术</a></li>
+                        <li><a href="artists-3d.html"><i class="fas fa-cube"></i> 3D艺术</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>其他</h3>
+                    <ul>
+                        <li><a href="other-articles.html"><i class="fas fa-book"></i> 其他文章</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="about.html" class="about-link"><i class="fas fa-info-circle"></i> 关于本站</a>
+                <div class="personal-use-notice">
+                    <p>本网站为个人学习使用，内容仅供个人参考。</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span class="contact-email">contact@example.com</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="update-bar">
+                <div class="update-info">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>最近更新: <strong id="last-update-date">2023-11-20</strong></span>
+                </div>
+            </div>
+            
+            <div class="article-content">
+                <div class="artist-header">
+                    <h1>John Park</h1>
+                    <p class="artist-tagline">暴雪娱乐资深概念设计师 · 科幻场景与机械设计专家</p>
+                    
+                    <div class="artist-header-divider"></div>
+                    
+                    <div class="artist-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <a href="https://www.artstation.com/jpark" target="_blank">ArtStation主页</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-twitter"></i>
+                            <a href="https://twitter.com/jpark" target="_blank">Twitter</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>暴雪娱乐（Blizzard Entertainment）</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>美国洛杉矶</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-body">
+                    <h2><i class="fas fa-info-circle"></i> 设计师简介</h2>
+                    <p>John Park是暴雪娱乐的资深概念设计师，专精于科幻场景和机械设计。他在暴雪工作了超过10年，参与了《守望先锋》、《星际争霸II》等多个知名项目的概念设计工作。</p>
+                    
+                    <h2><i class="fas fa-images"></i> 代表作品</h2>
+                    
+                    <!-- 瀑布流图片展示 -->
+                    <div class="artist-works">
+                        <div class="works-masonry">
+                            <!-- 作品1 -->
+                            <div class="work-item-masonry">
+                                <a href="#" class="work-image-link" data-image="work1">
+                                    <div class="placeholder-image image-h300">守望先锋地图概念</div>
+                                </a>
+                                <div class="work-description-overlay">
+                                    <div>《守望先锋》 - 努巴尼地图早期概念</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 作品2 -->
+                            <div class="work-item-masonry">
+                                <a href="#" class="work-image-link" data-image="work2">
+                                    <div class="placeholder-image image-h400">科幻载具设计</div>
+                                </a>
+                                <div class="work-description-overlay">
+                                    <div>科幻载具概念设计 - 个人项目</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 作品3 -->
+                            <div class="work-item-masonry">
+                                <a href="#" class="work-image-link" data-image="work3">
+                                    <div class="placeholder-image image-h250">机械装甲概念</div>
+                                </a>
+                                <div class="work-description-overlay">
+                                    <div>可穿戴式机械装甲系统</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 作品4 -->
+                            <div class="work-item-masonry">
+                                <a href="#" class="work-image-link" data-image="work4">
+                                    <div class="placeholder-image image-h350">未来城市设计</div>
+                                </a>
+                                <div class="work-description-overlay">
+                                    <div>科幻未来城市环境概念</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 作品5 -->
+                            <div class="work-item-masonry">
+                                <a href="#" class="work-image-link" data-image="work5">
+                                    <div class="placeholder-image image-h280">星际争霸单位设计</div>
+                                </a>
+                                <div class="work-description-overlay">
+                                    <div>《星际争霸II》单位概念设计</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 作品6 -->
+                            <div class="work-item-masonry">
+                                <a href="#" class="work-image-link" data-image="work6">
+                                    <div class="placeholder-image image-h320">武器设计系列</div>
+                                </a>
+                                <div class="work-description-overlay">
+                                    <div>科幻武器设计 - 系列作品</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 作品7 -->
+                            <div class="work-item-masonry">
+                                <a href="#" class="work-image-link" data-image="work7">
+                                    <div class="placeholder-image image-h380">机甲设计</div>
+                                </a>
+                                <div class="work-description-overlay">
+                                    <div>大型机甲概念设计</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 作品8 -->
+                            <div class="work-item-masonry">
+                                <a href="#" class="work-image-link" data-image="work8">
+                                    <div class="placeholder-image image-h220">科幻内饰</div>
+                                </a>
+                                <div class="work-description-overlay">
+                                    <div>飞船内部空间设计</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 作品9 -->
+                            <div class="work-item-masonry">
+                                <a href="#" class="work-image-link" data-image="work9">
+                                    <div class="placeholder-image image-h300">角色设计</div>
+                                </a>
+                                <div class="work-description-overlay">
+                                    <div>科幻角色概念设计</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 作品10 -->
+                            <div class="work-item-masonry">
+                                <a href="#" class="work-image-link" data-image="work10">
+                                    <div class="placeholder-image image-h350">环境概念</div>
+                                </a>
+                                <div class="work-description-overlay">
+                                    <div>外星环境概念设计</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片放大模态框 -->
+                    <div id="imageModal" class="image-modal">
+                        <div class="modal-content">
+                            <button class="close-modal">&times;</button>
+                            <img id="modalImage" src="" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>Ar的艺术理论笔记 - 个人学习资料整理</p>
+                <p>联系: <span class="contact-email">contact@example.com</span></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 图片放大功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const workLinks = document.querySelectorAll('.work-image-link');
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeModal = document.querySelector('.close-modal');
+            
+            // 点击图片打开模态框
+            workLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const workTitle = this.querySelector('.placeholder-image').textContent;
+                    modalImage.alt = workTitle;
+                    modalImage.src = '#'; // 这里替换为实际图片路径
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // 防止背景滚动
+                });
+            });
+            
+            // 关闭模态框
+            closeModal.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // 点击模态框背景关闭
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // ESC键关闭模态框
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

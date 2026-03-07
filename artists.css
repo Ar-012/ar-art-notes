@@ -1,0 +1,374 @@
+/* ============================================
+   画师合集页面专用样式
+   ============================================ */
+
+/* 1. 移除所有页面顶部的更新栏（除了index.html） */
+.artists-page .update-bar {
+    display: none;
+}
+
+/* 2. 画师分类页面样式 */
+.artists-category .content-section {
+    padding: 2rem;
+    width: 100%;
+}
+
+.artists-category h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.artists-category .section-intro {
+    color: #718096;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+/* 3. 画师网格布局 - 三列 */
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+/* 4. 单个画师卡片样式 - 整体可点击 */
+.artist-card {
+    background-color: #f8fafc;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    position: relative;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #3182ce;
+}
+
+/* 5. 画师缩略图容器 */
+.artist-thumbnail {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    background-color: #edf2f7;
+}
+
+.artist-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.artist-card:hover .artist-thumbnail img {
+    transform: scale(1.05);
+}
+
+/* 6. 重点标记样式 */
+.artist-featured {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    background-color: #3182ce;
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.artist-featured i {
+    font-size: 0.7rem;
+}
+
+/* 7. 画师信息 - 简化版 */
+.artist-info {
+    padding: 1.5rem;
+}
+
+.artist-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.artist-name i {
+    color: #3182ce;
+}
+
+.artist-specialty {
+    color: #718096;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* 8. 单个画师页面样式 */
+.artist-single-page .artist-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.artist-single-page .artist-header h1 {
+    font-size: 2.2rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.artist-tagline {
+    font-size: 1.1rem;
+    color: #718096;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.artist-header-divider {
+    height: 3px;
+    width: 60px;
+    background-color: #3182ce;
+    margin: 1.5rem 0;
+}
+
+/* 9. 画师联系方式 */
+.artist-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #f7fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+.contact-item i {
+    color: #3182ce;
+}
+
+.contact-item a {
+    color: #3182ce;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* 10. 瀑布流作品展示 */
+.artist-works {
+    margin-top: 2rem;
+}
+
+.artist-works h2 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* 瀑布流网格布局 */
+.works-masonry {
+    column-count: 3;
+    column-gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.work-item-masonry {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.work-item-masonry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 可点击的图片 */
+.work-image-link {
+    display: block;
+    cursor: pointer;
+    position: relative;
+}
+
+.work-image-link img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.work-image-link:hover img {
+    opacity: 0.95;
+}
+
+/* 放大查看提示 */
+.work-image-link::after {
+    content: '\f00e'; /* FontAwesome搜索图标 */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.work-image-link:hover::after {
+    opacity: 1;
+}
+
+/* 图片描述（悬停显示） */
+.work-description-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: translateY(10px);
+}
+
+.work-item-masonry:hover .work-description-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 11. 图片放大模态框 */
+.image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.close-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.close-modal:hover {
+    color: #3182ce;
+}
+
+/* 12. 响应式设计 */
+@media (max-width: 1200px) {
+    .artists-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .works-masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .artists-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .artists-category .content-section {
+        padding: 1.5rem;
+    }
+    
+    .artist-single-page .artist-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .works-masonry {
+        column-count: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .artists-category .content-section {
+        padding: 1rem;
+    }
+    
+    .artist-single-page .artist-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .artist-contact {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
