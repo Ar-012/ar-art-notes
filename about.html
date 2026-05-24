@@ -105,20 +105,24 @@
     <!-- 访问权限检查 -->
     <script>
         function checkAccess() {
-            const SESSION_KEY = 'art_notes_access';
-            const SESSION_EXPIRY = 7 * 24 * 60 * 60 * 1000; // 一周
-            
-            const accessData = localStorage.getItem(SESSION_KEY);
-            if (!accessData) {
-                window.location.href = 'password.html';
-                return;
+            const ACCESS_KEY = 'art_notes_access';
+
+            function getTodayKey() {
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const day = String(now.getDate()).padStart(2, '0');
+                return year + '-' + month + '-' + day;
             }
-            
-            const { timestamp } = JSON.parse(accessData);
-            const now = new Date().getTime();
-            
-            if (now - timestamp >= SESSION_EXPIRY) {
-                localStorage.removeItem(SESSION_KEY);
+
+            try {
+                const accessData = JSON.parse(localStorage.getItem(ACCESS_KEY));
+                if (!accessData || accessData.granted !== true || accessData.date !== getTodayKey()) {
+                    localStorage.removeItem(ACCESS_KEY);
+                    window.location.href = 'password.html';
+                }
+            } catch (error) {
+                localStorage.removeItem(ACCESS_KEY);
                 window.location.href = 'password.html';
             }
         }
